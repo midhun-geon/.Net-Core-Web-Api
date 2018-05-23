@@ -1,0 +1,11 @@
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\bin\Debug\netcoreapp2.0\Web Api .Net Core.deps.json
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\bin\Debug\netcoreapp2.0\Web Api .Net Core.runtimeconfig.json
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\bin\Debug\netcoreapp2.0\Web Api .Net Core.runtimeconfig.dev.json
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\bin\Debug\netcoreapp2.0\Web Api .Net Core.dll
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\bin\Debug\netcoreapp2.0\Web Api .Net Core.pdb
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.csprojAssemblyReference.cache
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.csproj.CoreCompileInputs.cache
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.AssemblyInfoInputs.cache
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.AssemblyInfo.cs
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.dll
+E:\AngularProject\.Net Core Api\Web Api .Net Core\Web Api .Net Core\obj\Debug\netcoreapp2.0\Web Api .Net Core.pdb
