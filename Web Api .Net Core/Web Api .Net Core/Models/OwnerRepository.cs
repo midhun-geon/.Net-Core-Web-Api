@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace Web_Api_.Net_Core.Models
 {
-    public class OwnerRepository : IUser
+    public class UserRepository : IUser
     {
-        private readonly DataRepo _repo;
+        DataRepo _repo = new DataRepo();
         public void Add(UserModel entity)
         {
+            entity.id = Guid.NewGuid().ToString();
             _repo.Insert(entity);
         }
     }

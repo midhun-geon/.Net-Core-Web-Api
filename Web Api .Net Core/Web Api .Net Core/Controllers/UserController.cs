@@ -9,35 +9,39 @@ using Web_Api_.Net_Core.Models;
 namespace Web_Api_.Net_Core.Controllers
 {
 
-    [Route("api/user")]
+    [Route("api/[controller]")]
     public class UserController : Controller
     {
-        //[HttpGet]
-        //public string Get()
-        //{
-        //    return "asasas";
-        //}
-
-        //[HttpGet("{searchstring}")]
-        //public IActionResult Get(string searchstring)
-        //{
-        //    return new ObjectResult(searchstring);
-        //}
-
-
-        //[HttpGet("{Id:int}")]
-        //public IActionResult Get(int Id)
-        //{
-        //    return new ObjectResult(Id);
-        //}
-        [HttpPost]
-        public IActionResult Insert([FromBody]UserModel user)
+        public UserController(IUser userItems)
         {
-            if(user==null)
+            UserItems = userItems;
+        }
+        public IUser UserItems { get; set; }
+
+        [HttpPost]
+        public IActionResult Insert(UserModel user)
+        {    
+            try
             {
-                return BadRequest("Recieved a Bad request");
+
+                if (user == null)
+                {
+                    return BadRequest("Recieved a Bad request");
+                }
+              UserItems.Add(user);
+               
+               return Ok();
             }
-            
+            catch(Exception e)
+            {
+                return StatusCode(500, e);
+            }
+           
+        }
+        [HttpGet]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "Get", "Me" };
         }
     }
 }
