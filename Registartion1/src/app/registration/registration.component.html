@@ -1,0 +1,76 @@
+<mat-card>     
+  <mat-card-title>    
+       Form  
+  </mat-card-title>    
+  <mat-card-content>    
+      <form #UserDetailsAddForm="ngForm" (ngSubmit)="onSubmit(UserDetailsAddForm)">    
+          <table>    
+              <tr>    
+                  <td>    
+                      <mat-form-field class="demo-full-width">    
+                          <input matInput placeholder="First Name" [(ngModel)]="model.FirstName" name="something">    
+                      </mat-form-field>    
+                  </td>    
+                  <td>    
+                      <mat-form-field class="demo-full-width">    
+                          <input matInput placeholder="Last Name" [(ngModel)]="model.LastName" name="anything">    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td colspan="2">    
+                      <mat-form-field class="demo-full-width">    
+                          <textarea matInput placeholder="Address" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" [(ngModel)]="model.Address" name="sdsdsdsd"></textarea>    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td colspan="2">    
+                      <mat-form-field class="demo-full-width">    
+                          <input matInput [matDatepicker]="picker" placeholder="Date of birth"[(ngModel)]="model.DateOfBirth" name="dob">    
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+                          <mat-datepicker touchUi="true" #picker></mat-datepicker>    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td>    
+                      <span>Gender</span><br><br>    
+                      <mat-radio-group [(ngModel)]="model.Gender" name="gender">    
+                          <mat-radio-button value="male">Male</mat-radio-button>    
+                          <mat-radio-button value="female">Female</mat-radio-button>    
+                      </mat-radio-group>    
+                  </td>    
+                  <td><br>    
+                      <mat-form-field>    
+                          <mat-select placeholder="Select Language" [(value)]="selected" [(ngModel)]="model.Language" name="lang">    
+                              <mat-option>-- Select Any --</mat-option>    
+                              <mat-option value="C#">C#</mat-option>    
+                              <mat-option value="Angular">Angular</mat-option>    
+                              <mat-option value=">.Net Core">.Net Core</mat-option>    
+                          </mat-select>    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td colspan="2">    
+                      <mat-form-field class="demo-full-width">    
+                          <input matInput placeholder="Email"[(ngModel)]="model.Email" name="email">    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td colspan="2">    
+  
+                  </td>    
+              </tr>    
+              <tr>    
+                  <td colspan="2" class="content-center">    
+                      <button mat-raised-button color="accent" >Submit</button>    
+                      <button mat-raised-button color="accent">Clear</button>    
+                  </td>    
+              </tr>    
+          </table>    
+      </form>    
+  </mat-card-content>    
+</mat-card>   
