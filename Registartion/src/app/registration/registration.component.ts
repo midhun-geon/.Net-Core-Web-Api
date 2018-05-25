@@ -10,18 +10,21 @@ import {RegistrationService} from './registration.service'
 })
 export class RegistrationComponent implements OnInit {
   model: UserModel = new UserModel()
-  constructor(public regser:RegistrationService) { }
-
+  constructor(public regser:RegistrationService) {
+  }
   ngOnInit() {
   }
   onSubmit(form: NgForm) {
-    // console.log(this.model.FirstName)
-    // console.log(this.model.LastName)
-    // console.log(this.model.Address)
-    // console.log(this.model.Gender)
-    // console.log(this.model.DateOfBirth)
-    // console.log(this.model.Language)
-    // console.log(this.model.Email)
     this.regser.postUserData(this.model).subscribe()
+    form.resetForm()
+  }
+  ClearForm(){
+    //form.resetForm()
+   this.regser.getUserData().subscribe(results => {
+    var mod = results[0].id;
+    console.log(mod)
+  }
+  )
+    
   }
 }

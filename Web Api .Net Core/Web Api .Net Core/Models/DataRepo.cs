@@ -12,5 +12,17 @@ namespace Web_Api_.Net_Core.Models
         {
             UserDataList.Add(entity);
         }
+        public List<UserModel> getData()
+        {
+            var dat = UserDataList;
+            return dat;
+        }
+        public string findId(string id)
+        {
+            string name  = (from cust in UserDataList
+                       where cust.id == id
+                       select cust.FirstName).ToString();
+            return name;
+        }
     }
 }

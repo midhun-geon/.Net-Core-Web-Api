@@ -26,6 +26,9 @@ namespace Web_Api_.Net_Core
         {
             services.AddSingleton<IUser, UserRepository>();
             services.AddMvc();
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+                                                             .AllowAnyMethod()
+                                                              .AllowAnyHeader()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,8 +38,9 @@ namespace Web_Api_.Net_Core
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("AllowAll");
             app.UseMvc();
+            
         }
     }
 }

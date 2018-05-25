@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Web_Api_.Net_Core.Models;
-
+using Microsoft.AspNetCore.Authorization;
 namespace Web_Api_.Net_Core.Controllers
 {
 
@@ -19,16 +19,16 @@ namespace Web_Api_.Net_Core.Controllers
         public IUser UserItems { get; set; }
 
         [HttpPost]
-        public IActionResult Insert(UserModel user)
-        {    
+        public IActionResult Insert([FromBody] UserModel user)
+        {
             try
             {
 
-                if (user == null)
+                if (user.FirstName != null)
                 {
-                    return BadRequest("Recieved a Bad request");
+                    UserItems.Add(user);
                 }
-              UserItems.Add(user);
+              
                
                return Ok();
             }
@@ -39,9 +39,24 @@ namespace Web_Api_.Net_Core.Controllers
            
         }
         [HttpGet]
-        public IEnumerable<string> Get()
+        public  IList<UserModel> GetAll()
         {
-            return new string[] { "Get", "Me" };
+            var item =  UserItems.GetAll();
+            if (item == null)
+            {
+                
+            }
+            return  item;
+        }
+        [HttpGet("{id}")]
+        public  IActionResult GetById(string id)
+        {
+            var item = UserItems.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(item);
         }
     }
 }

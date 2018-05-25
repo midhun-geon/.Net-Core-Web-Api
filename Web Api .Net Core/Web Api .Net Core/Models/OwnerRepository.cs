@@ -13,5 +13,15 @@ namespace Web_Api_.Net_Core.Models
             entity.id = Guid.NewGuid().ToString();
             _repo.Insert(entity);
         }
+        public List<UserModel> GetAll()
+        {
+            var record = _repo.getData();
+            return record;
+        }
+        public string Find(string id)
+        {
+            string record = _repo.findId(id);
+            return record;
+        }
     }
 }
